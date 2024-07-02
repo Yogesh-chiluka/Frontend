@@ -1,6 +1,6 @@
-import { Outlet } from 'react-router-dom'
-import EmptyVideoPage from '../components/EmptyVideoPage'
-import VideoListingPage from './VideoListingPageCards'
+import { Outlet, NavLink } from 'react-router-dom'
+import EmptyVideoPage from './SideNavigation/Home/EmptyVideoPage'
+import VideoListingPage from './SideNavigation/Home/VideoListingPageCards'
 
 
 export default function Layout(){
@@ -25,11 +25,92 @@ export default function Layout(){
                             <button class="inline-block w-8"></button>
                         </div>
                         <ul class="my-4 flex w-full flex-wrap gap-2 px-4 sm:hidden">
-                            <li class="w-full"><button class="flex w-full items-center justify-start gap-x-4 border border-white px-4 py-1.5 text-left hover:bg-[#ae7aff] hover:text-black focus:border-[#ae7aff] focus:bg-[#ae7aff] focus:text-black"><span class="inline-block w-full max-w-[20px] group-hover:mr-4 lg:mr-4"></span><span>Liked Videos</span></button></li><li class="w-full"><button class="flex w-full items-center justify-start gap-x-4 border border-white px-4 py-1.5 text-left hover:bg-[#ae7aff] hover:text-black focus:border-[#ae7aff] focus:bg-[#ae7aff] focus:text-black"><span class="inline-block w-full max-w-[20px] group-hover:mr-4 lg:mr-4"></span><span>My Content</span></button></li><li class="w-full"><button class="flex w-full items-center justify-start gap-x-4 border border-white px-4 py-1.5 text-left hover:bg-[#ae7aff] hover:text-black focus:border-[#ae7aff] focus:bg-[#ae7aff] focus:text-black"><span class="inline-block w-full max-w-[20px] group-hover:mr-4 lg:mr-4"></span><span>Support</span></button></li><li class="w-full"><button class="flex w-full items-center justify-start gap-x-4 border border-white px-4 py-1.5 text-left hover:bg-[#ae7aff] hover:text-black focus:border-[#ae7aff] focus:bg-[#ae7aff] focus:text-black"><span class="inline-block w-full max-w-[20px] group-hover:mr-4 lg:mr-4"></span><span>Settings</span></button></li></ul><div class="mb-8 mt-auto flex w-full flex-wrap gap-4 px-4 sm:mb-0 sm:mt-0 sm:items-center sm:px-0">
+
+                            <li className="w-full">
+
+                                <NavLink to="/Home"><button  className="flex w-full items-center justify-start gap-x-4 border border-white px-4 py-1.5 text-left hover:bg-[#ae7affd] hover:text-black focus:border-[#ae7aff] focus:bg-[#ae7aff] focus:text-black">
+                                <span className="inline-block w-full max-w-[20px] group-hover:mr-4 lg:mr-4"></span>
+                                <span>Liked Videos</span>
+                                </button>
+                                </NavLink>
+                            </li>
+                            
+                            <li className="w-full">
+                                <NavLink to="/VideoDetailPage"><button  className="flex w-full items-center justify-start gap-x-4 border border-white px-4 py-1.5 text-left hover:bg-[#ae7affd] hover:text-black focus:border-[#ae7aff] focus:bg-[#ae7aff] focus:text-black"><span class="inline-block w-full max-w-[20px] group-hover:mr-4 lg:mr-4"></span><span>My Content</span>
+                                </button>
+                                </NavLink>
+                            </li>
+                            
+                            <li class="w-full">
+                                <NavLink to="/tasks"><button  class="flex w-full items-center justify-start gap-x-4 border border-white px-4 py-1.5 text-left hover:bg-[#ae7aff] hover:text-black focus:border-[#ae7aff] focus:bg-[#ae7aff] focus:text-black"><span class="inline-block w-full max-w-[20px] group-hover:mr-4 lg:mr-4"></span><span>Support</span>
+                                </button>
+                                </NavLink>
+                            </li>
+                            
+                            <li class="w-full">
+                                <NavLink to="/tasks"><button  class="flex w-full items-center justify-start gap-x-4 border border-white px-4 py-1.5 text-left hover:bg-[#ae7aff] hover:text-black focus:border-[#ae7aff] focus:bg-[#ae7aff] focus:text-black"><span class="inline-block w-full max-w-[20px] group-hover:mr-4 lg:mr-4"></span><span>Settings</span>
+                                </button>
+                                </NavLink>
+                            </li>
+                            
+                        </ul>
+                            
+                        <div class="mb-8 mt-auto flex w-full flex-wrap gap-4 px-4 sm:mb-0 sm:mt-0 sm:items-center sm:px-0">
                         <button class="w-full bg-[#383737] px-3 py-2 hover:bg-[#4f4e4e] sm:w-auto sm:bg-transparent">Log in</button>
                         <button class="mr-1 w-full bg-[#ae7aff] px-3 py-2 text-center font-bold text-black shadow-[5px_5px_0px_0px_#4f4e4e] transition-all duration-150 ease-in-out active:translate-x-[5px] active:translate-y-[5px] active:shadow-[0px_0px_0px_0px_#4f4e4e] sm:w-auto">Sign up</button>
                     </div></div></nav></header>
-        <div class="flex min-h-[calc(100vh-66px)] sm:min-h-[calc(100vh-82px)]"><aside class="group fixed inset-x-0 bottom-0 z-40 w-full shrink-0 border-t border-white bg-[#121212] px-2 py-2 sm:absolute sm:inset-y-0 sm:max-w-[70px] sm:border-r sm:border-t-0 sm:py-6 sm:hover:max-w-[250px] lg:sticky lg:max-w-[250px]"><ul class="flex justify-around gap-y-2 sm:sticky sm:top-[106px] sm:min-h-[calc(100vh-130px)] sm:flex-col"><li class=""><button class="flex flex-col items-center justify-center border-white py-1 focus:text-[#ae7aff] sm:w-full sm:flex-row sm:border sm:p-1.5 sm:hover:bg-[#ae7aff] sm:hover:text-black sm:focus:border-[#ae7aff] sm:focus:bg-[#ae7aff] sm:focus:text-black sm:group-hover:justify-start sm:group-hover:px-4 lg:justify-start lg:px-4"><span class="inline-block w-5 shrink-0 sm:group-hover:mr-4 lg:mr-4"></span><span class="block sm:hidden sm:group-hover:inline lg:inline">Home</span></button></li><li class="hidden sm:block"><button class="flex flex-col items-center justify-center border-white py-1 focus:text-[#ae7aff] sm:w-full sm:flex-row sm:border sm:p-1.5 sm:hover:bg-[#ae7aff] sm:hover:text-black sm:focus:border-[#ae7aff] sm:focus:bg-[#ae7aff] sm:focus:text-black sm:group-hover:justify-start sm:group-hover:px-4 lg:justify-start lg:px-4"><span class="inline-block w-5 shrink-0 sm:group-hover:mr-4 lg:mr-4"></span><span class="block sm:hidden sm:group-hover:inline lg:inline">Liked Videos</span></button></li><li class=""><button class="flex flex-col items-center justify-center border-white py-1 focus:text-[#ae7aff] sm:w-full sm:flex-row sm:border sm:p-1.5 sm:hover:bg-[#ae7aff] sm:hover:text-black sm:focus:border-[#ae7aff] sm:focus:bg-[#ae7aff] sm:focus:text-black sm:group-hover:justify-start sm:group-hover:px-4 lg:justify-start lg:px-4"><span class="inline-block w-5 shrink-0 sm:group-hover:mr-4 lg:mr-4"></span><span class="block sm:hidden sm:group-hover:inline lg:inline">History</span></button></li><li class="hidden sm:block"><button class="flex flex-col items-center justify-center border-white py-1 focus:text-[#ae7aff] sm:w-full sm:flex-row sm:border sm:p-1.5 sm:hover:bg-[#ae7aff] sm:hover:text-black sm:focus:border-[#ae7aff] sm:focus:bg-[#ae7aff] sm:focus:text-black sm:group-hover:justify-start sm:group-hover:px-4 lg:justify-start lg:px-4"><span class="inline-block w-5 shrink-0 sm:group-hover:mr-4 lg:mr-4"></span><span class="block sm:hidden sm:group-hover:inline lg:inline">My Content</span></button></li><li class=""><button class="flex flex-col items-center justify-center border-white py-1 focus:text-[#ae7aff] sm:w-full sm:flex-row sm:border sm:p-1.5 sm:hover:bg-[#ae7aff] sm:hover:text-black sm:focus:border-[#ae7aff] sm:focus:bg-[#ae7aff] sm:focus:text-black sm:group-hover:justify-start sm:group-hover:px-4 lg:justify-start lg:px-4"><span class="inline-block w-5 shrink-0 sm:group-hover:mr-4 lg:mr-4"></span><span class="block sm:hidden sm:group-hover:inline lg:inline">Collections</span></button></li><li class=""><button class="flex flex-col items-center justify-center border-white py-1 focus:text-[#ae7aff] sm:w-full sm:flex-row sm:border sm:p-1.5 sm:hover:bg-[#ae7aff] sm:hover:text-black sm:focus:border-[#ae7aff] sm:focus:bg-[#ae7aff] sm:focus:text-black sm:group-hover:justify-start sm:group-hover:px-4 lg:justify-start lg:px-4"><span class="inline-block w-5 shrink-0 sm:group-hover:mr-4 lg:mr-4"></span><span class="block sm:hidden sm:group-hover:inline lg:inline">Subscribers</span></button></li><li class="hidden sm:block mt-auto"><button class="flex flex-col items-center justify-center border-white py-1 focus:text-[#ae7aff] sm:w-full sm:flex-row sm:border sm:p-1.5 sm:hover:bg-[#ae7aff] sm:hover:text-black sm:focus:border-[#ae7aff] sm:focus:bg-[#ae7aff] sm:focus:text-black sm:group-hover:justify-start sm:group-hover:px-4 lg:justify-start lg:px-4"><span class="inline-block w-5 shrink-0 sm:group-hover:mr-4 lg:mr-4"></span><span class="block sm:hidden sm:group-hover:inline lg:inline">Support</span></button></li><li class="hidden sm:block"><button class="flex flex-col items-center justify-center border-white py-1 focus:text-[#ae7aff] sm:w-full sm:flex-row sm:border sm:p-1.5 sm:hover:bg-[#ae7aff] sm:hover:text-black sm:focus:border-[#ae7aff] sm:focus:bg-[#ae7aff] sm:focus:text-black sm:group-hover:justify-start sm:group-hover:px-4 lg:justify-start lg:px-4"><span class="inline-block w-5 shrink-0 sm:group-hover:mr-4 lg:mr-4"></span><span class="block sm:hidden sm:group-hover:inline lg:inline">Settings</span></button></li></ul></aside>
+        <div class="flex min-h-[calc(100vh-66px)] sm:min-h-[calc(100vh-82px)]">
+            <aside class="group fixed inset-x-0 bottom-0 z-40 w-full shrink-0 border-t border-white bg-[#121212] px-2 py-2 sm:absolute sm:inset-y-0 sm:max-w-[70px] sm:border-r sm:border-t-0 sm:py-6 sm:hover:max-w-[250px] lg:sticky lg:max-w-[250px]">
+                <ul class="flex justify-around gap-y-2 sm:sticky sm:top-[106px] sm:min-h-[calc(100vh-130px)] sm:flex-col">
+                    <li class="">
+                        <NavLink to="/Home">
+                        <button class="flex flex-col items-center justify-center border-white py-1 focus:text-[#ae7aff] sm:w-full sm:flex-row sm:border sm:p-1.5 sm:hover:bg-[#ae7aff] sm:hover:text-black sm:focus:border-[#ae7aff] sm:focus:bg-[#ae7aff] sm:focus:text-black sm:group-hover:justify-start sm:group-hover:px-4 lg:justify-start lg:px-4"><span class="inline-block w-5 shrink-0 sm:group-hover:mr-4 lg:mr-4"></span><span class="block sm:hidden sm:group-hover:inline lg:inline">Home</span></button>
+                        </NavLink>
+                        </li>
+                    
+                    <li class="hidden sm:block">
+                    <NavLink to="/LikedVideos">
+                        <button class="flex flex-col items-center justify-center border-white py-1 focus:text-[#ae7aff] sm:w-full sm:flex-row sm:border sm:p-1.5 sm:hover:bg-[#ae7aff] sm:hover:text-black sm:focus:border-[#ae7aff] sm:focus:bg-[#ae7aff] sm:focus:text-black sm:group-hover:justify-start sm:group-hover:px-4 lg:justify-start lg:px-4"><span class="inline-block w-5 shrink-0 sm:group-hover:mr-4 lg:mr-4"></span><span class="block sm:hidden sm:group-hover:inline lg:inline">Liked Videos</span></button>
+                        </NavLink>
+                        </li>
+                    
+                    <li class="">
+                    <NavLink to="/History">
+                        <button class="flex flex-col items-center justify-center border-white py-1 focus:text-[#ae7aff] sm:w-full sm:flex-row sm:border sm:p-1.5 sm:hover:bg-[#ae7aff] sm:hover:text-black sm:focus:border-[#ae7aff] sm:focus:bg-[#ae7aff] sm:focus:text-black sm:group-hover:justify-start sm:group-hover:px-4 lg:justify-start lg:px-4"><span class="inline-block w-5 shrink-0 sm:group-hover:mr-4 lg:mr-4"></span><span class="block sm:hidden sm:group-hover:inline lg:inline">History</span></button>
+                        </NavLink>
+                        </li>
+
+                    <li class="hidden sm:block">
+                    <NavLink to="/messages">
+                        <button class="flex flex-col items-center justify-center border-white py-1 focus:text-[#ae7aff] sm:w-full sm:flex-row sm:border sm:p-1.5 sm:hover:bg-[#ae7aff] sm:hover:text-black sm:focus:border-[#ae7aff] sm:focus:bg-[#ae7aff] sm:focus:text-black sm:group-hover:justify-start sm:group-hover:px-4 lg:justify-start lg:px-4"><span class="inline-block w-5 shrink-0 sm:group-hover:mr-4 lg:mr-4"></span><span class="block sm:hidden sm:group-hover:inline lg:inline">My Content</span></button>
+                        </NavLink>
+                        </li>
+                    
+                    <li class="">
+                    <NavLink to="/messages">
+                        <button class="flex flex-col items-center justify-center border-white py-1 focus:text-[#ae7aff] sm:w-full sm:flex-row sm:border sm:p-1.5 sm:hover:bg-[#ae7aff] sm:hover:text-black sm:focus:border-[#ae7aff] sm:focus:bg-[#ae7aff] sm:focus:text-black sm:group-hover:justify-start sm:group-hover:px-4 lg:justify-start lg:px-4"><span class="inline-block w-5 shrink-0 sm:group-hover:mr-4 lg:mr-4"></span><span class="block sm:hidden sm:group-hover:inline lg:inline">Collections</span></button>
+                        </NavLink>
+                        </li>
+                    
+                    <li class="">
+                    <NavLink to="/messages">
+                        <button class="flex flex-col items-center justify-center border-white py-1 focus:text-[#ae7aff] sm:w-full sm:flex-row sm:border sm:p-1.5 sm:hover:bg-[#ae7aff] sm:hover:text-black sm:focus:border-[#ae7aff] sm:focus:bg-[#ae7aff] sm:focus:text-black sm:group-hover:justify-start sm:group-hover:px-4 lg:justify-start lg:px-4"><span class="inline-block w-5 shrink-0 sm:group-hover:mr-4 lg:mr-4"></span><span class="block sm:hidden sm:group-hover:inline lg:inline">Subscribers</span></button>
+                        </NavLink>
+                        </li>
+                    
+                    <li class="hidden sm:block mt-auto">
+                    <NavLink to="/messages">
+                        <button class="flex flex-col items-center justify-center border-white py-1 focus:text-[#ae7aff] sm:w-full sm:flex-row sm:border sm:p-1.5 sm:hover:bg-[#ae7aff] sm:hover:text-black sm:focus:border-[#ae7aff] sm:focus:bg-[#ae7aff] sm:focus:text-black sm:group-hover:justify-start sm:group-hover:px-4 lg:justify-start lg:px-4"><span class="inline-block w-5 shrink-0 sm:group-hover:mr-4 lg:mr-4"></span><span class="block sm:hidden sm:group-hover:inline lg:inline">Support</span></button>
+                        </NavLink>
+                        </li>
+                    
+                    <li class="hidden sm:block">
+                    <NavLink to="/messages">
+                        <button class="flex flex-col items-center justify-center border-white py-1 focus:text-[#ae7aff] sm:w-full sm:flex-row sm:border sm:p-1.5 sm:hover:bg-[#ae7aff] sm:hover:text-black sm:focus:border-[#ae7aff] sm:focus:bg-[#ae7aff] sm:focus:text-black sm:group-hover:justify-start sm:group-hover:px-4 lg:justify-start lg:px-4"><span class="inline-block w-5 shrink-0 sm:group-hover:mr-4 lg:mr-4"></span><span class="block sm:hidden sm:group-hover:inline lg:inline">Settings</span></button>
+                        </NavLink>
+                        </li>
+                    
+                    </ul></aside>
             <section class="w-full pb-[70px] sm:ml-[70px] sm:pb-0 lg:ml-0">
                 <Outlet/>
             </section>

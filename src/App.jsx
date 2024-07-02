@@ -12,9 +12,13 @@ import {
   Navigate
 } from "react-router-dom";
 
-import EmptyVideoPage from './components/EmptyVideoPage'
-import VideoListingPageCards from './components/VideoListingPageCards'
-import VideoListingPageList from './components/VideoListingPageList'
+//common
+import VideoDetailPage from './components/common/videoDetail/videoDetailPage'
+``
+//Home
+import EmptyVideoPage from './components/SideNavigation/Home/EmptyVideoPage'
+import VideoListingPageCards from './components/SideNavigation/Home/VideoListingPageCards'
+import VideoListingPageList from './components/SideNavigation/Home/VideoListingPageList'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -22,11 +26,15 @@ const router = createBrowserRouter(
       path="/"
       element={<Layout />}
     >
-      <Route path='/Home' element={<EmptyVideoPage />} >
+      <Route path='/VideoDetailPage' element={<VideoDetailPage />}/>
+      <Route path='/:Home' >
         <Route path='/Home/Empty' element={<EmptyVideoPage />} />
-        <Route path='/Home/VideoCards' element={<VideoListingPageCards />} />
-        <Route path='/Home/VideoList' element={<VideoListingPageList />} />
+        <Route path='/Home/CardView' element={<VideoListingPageCards />} />
+          
+        <Route path='/Home/ListView' element={<VideoListingPageList />} />
       </Route>
+      <Route path='/:LikedVideos' ></Route>
+      <Route path='/:History' ></Route>
     </Route>
   )
 );
