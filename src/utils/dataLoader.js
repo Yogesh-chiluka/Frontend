@@ -1,4 +1,13 @@
+import axios from "axios";
 
+const headers = {
+    Accept: "application/json",
+    "Content-Type": "application/json",
+  };
+  const axiosInstance = axios.create({
+    headers,
+  });
+export {axiosInstance}
 
 export const dataLoader = async ({ params }) => {
 
@@ -21,3 +30,19 @@ export const dataLoader = async ({ params }) => {
     const data = await response.json();
     return { type, data}
 }
+
+
+
+
+export function getData(data) {
+    
+    return axios.get(data)
+      .then(function (response) {
+        console.log(response);
+        return response.data; // <-- returned to getReasonTypes
+      })
+      .catch(function (error) {
+        console.log(error);
+        throw error;
+      });
+  }

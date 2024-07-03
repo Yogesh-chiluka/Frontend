@@ -1,10 +1,27 @@
 import { Outlet, NavLink } from 'react-router-dom'
-import EmptyVideoPage from './SideNavigation/Home/EmptyVideoPage'
-import VideoListingPage from './SideNavigation/Home/VideoListingPageCards'
-
+import EmptyVideoPage from './SideNavigation/common/EmptyVideoPage'
+import VideoListingPage from './SideNavigation/common/VideoListingPageCards'
+import { useEffect } from 'react'
+import axios from "axios";
+import { axiosInstance } from '../utils/dataLoader';
 
 export default function Layout(){
+    useEffect(()=>{
+        axios.post("http://localhost:8000/api/v1/users/login",
+            {
+                "email": "spiderman4@mail.com",
+                "password":"spiderman4"
+            }
+        ).then(function (response){
+            const token = response?.data?.data?.accessToken;
+            console.log(token)
+            axiosInstance.defaults.headers.common.Authorization = `Bearer ${token}`
+            localStorage.setItem('tokenKey', token)
+                console.log(response);
+        })
+    })
 
+  
     return(<>
         <header class="sticky inset-x-0 top-0 z-50 w-full border-b border-white bg-[#121212] px-4">
             <nav class="mx-auto flex max-w-7xl items-center py-2">

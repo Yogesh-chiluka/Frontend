@@ -16,10 +16,10 @@ import {
 import VideoDetailPage from './components/common/videoDetail/videoDetailPage'
 ``
 //Home
-import EmptyVideoPage from './components/SideNavigation/Home/EmptyVideoPage'
-import VideoListingPageCards from './components/SideNavigation/Home/VideoListingPageCards'
-import VideoListingPageList from './components/SideNavigation/Home/VideoListingPageList'
-
+import Home from './components/SideNavigation/Home';
+import LikedVideos from './components/SideNavigation/LikedVideos';
+//import LikedVideos,{Loader as LikedVideosLoader} from './components/SideNavigation/LikedVideos';
+//<Route path='/LikedVideos' element={<LikedVideos />} loader={LikedVideosLoader} ></Route>
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route
@@ -27,14 +27,9 @@ const router = createBrowserRouter(
       element={<Layout />}
     >
       <Route path='/VideoDetailPage' element={<VideoDetailPage />}/>
-      <Route path='/:Home' >
-        <Route path='/Home/Empty' element={<EmptyVideoPage />} />
-        <Route path='/Home/CardView' element={<VideoListingPageCards />} />
-          
-        <Route path='/Home/ListView' element={<VideoListingPageList />} />
-      </Route>
-      <Route path='/:LikedVideos' ></Route>
-      <Route path='/:History' ></Route>
+      <Route path='/Home' element={<Home />} />
+      <Route path='/LikedVideos' element={<LikedVideos />} ></Route>
+      <Route path='/History' ></Route>
     </Route>
   )
 );
@@ -51,3 +46,8 @@ export default App
 //<Route index element={<Index /> } />
 
 //<Route path='/EmptyVideoPage' element={<EmptyVideoPage />} loader={ReposLoader} errorElement={<ErrorPage/>} />
+
+//        <Route path='/Home/Empty' element={<EmptyVideoPage />} />
+//<Route path='/Home/CardView' element={<VideoListingPageCards />} />
+//<Route path='/Home/ListView' element={<VideoListingPageList />} />
+//
